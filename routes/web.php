@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('tarefa', 'TarefaController');
+Route::resource('tipo_tarefa', 'tipo_tarefaController');
