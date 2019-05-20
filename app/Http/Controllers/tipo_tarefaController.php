@@ -3,82 +3,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tipo_tarefa;
 
-class tipo_tarefaController extends Controller
+class Tipo_tarefaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        //
+        $tipo_tarefa = Tipo_tarefa::all();
+        return view('list-tipo_tarefa', compact('tipo_tarefa'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('registrar-tipo_tarefa');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $tipo_tarefa = new Tipo_tarefa();
+        $tipo_tarefa->nome = $request->input("nome");
+        $tipo_tarefa->save();
+        return redirect()->route('tipo_tarefa.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Tipo_tarefa $tipo_tarefa)
     {
-        //
+        return view('edit-tipo_tarefa', compact('tipo_tarefa'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tipo_tarefa $tipo_tarefa)
     {
-        //
+        $tipo_tarefa->nome = $request->input("nome");
+        $tipo_tarefa->save();
+        return redirect()->route('tipo_tarefa.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Tipo_tarefa $tipo_tarefa)
     {
-        //
+        $tipo_tarefa->delete();
+        return redirect()->route('tipo_tarefa.index');
     }
 }

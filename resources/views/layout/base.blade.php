@@ -26,13 +26,29 @@
             font-size: 40pt;
             color: #A70C19;
     }
-    a{
-        color: ;
-    }
     .listar{
         position: absolute;
+        color: black;
+        background-color: black;
+        box-shadow: black 0px 0px 2px;
+        width: 70%;
+        left: 25%;
+        top: 17%;
+    }
+    .registrar{
+        position: absolute;
+        box-shadow: black 0px 0px 15px;
+        background-color: #848484;
+        font-size: 15pt;
+        color: black;
+        width: 50%;
         left: 38%;
         top: 17%;
+    }
+    .botao{
+        position: absolute;
+        top: 66%;
+        left: 38%;
     }
     </style>
 	<!--[if lt IE 9]>
@@ -63,32 +79,28 @@
                         <li class="child-menu"><a href="#">Tipo tarefa<i></i></a>
                             <div class="sub-menu-wrapper">
                                 <ul class="sub-menu center-content">
-                                    <li><a href="#">Registrar um tipo de tarefa</a></li>
+                                    <li><a href="{{route('tipo_tarefa.create')}}">Registrar um tipo de tarefas</a></li>
+                                    <li><a href="{{route('tipo_tarefa.index')}}">Listar tipo de tarefas</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="child-menu"><a href="#">Tarefa</i></a>
                             <div class="sub-menu-wrapper">
                                 <ul class="sub-menu center-content">  
-                                    <li><a href="#">Adicionar uma tarefa</a></li>
+                                    <li><a href="{{route('tarefa.create')}}">Adicionar uma tarefa</a></li>
                                     <li><a href="{{route('tarefa.index')}}">Listar todas as tarefas</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="child-menu"><a href="#">Dados de sua conta</a>
-                            <div class="sub-menu-wrapper">
-                                <ul class="sub-menu center-content">
-                                    <li><a href="#">Atualziar Conta</a> 
-                                    </li>
-                                    <li><a href="#">Excluir</a> 
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
+                        <li class="child-menu"><a href="/lista_user">Dados de sua conta</a>
                         </li>
-                        <li class="child-menu"><a href="#">Sair</i></a>
+                        <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <li class="child-menu"><a href="#"><button type="submit" class = "btn btn-danger">Sair</button></i></a>
+                        </form>
                         </li>
           </ul>
     </div><!-- end wrapper -->
 </body>
 </html>
+                            

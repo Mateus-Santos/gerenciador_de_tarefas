@@ -16,13 +16,14 @@ class CreateTarefasTable extends Migration
         Schema::create('tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('titulo');
-            $table->string('usuario_responsavel');
-            $table->boolean('privacidade');
+            $table->unsignedBigInteger('usuario_responsavel');
+            $table->boolean('privado');
             $table->string('descricao');
             $table->unsignedBigInteger('tipo');
             $table->string('status');
             $table->string('data_conclusao');
             $table->foreign('tipo')->references('id')->on('tipo_tarefas');
+            $table->foreign('usuario_responsavel')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

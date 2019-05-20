@@ -14,6 +14,7 @@
       <th scope="col">Tipo</th>
       <th scope="col">Status</th>
       <th scope="col">Data conclusao</th>
+      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -22,11 +23,19 @@
       <th scope="row">{{$tare->id}}</th>
       <td>{{$tare->titulo}}</td>
       <td>{{$tare->usuario_responsavel}}</td>
-      <td>{{$tare->privacidade}}</td>
+      <td>{{$tare->privado}}</td>
       <td>{{$tare->descricao}}</td>
       <td>{{$tare->tipo}}</td>
       <td>{{$tare->status}}</td>
       <td>{{$tare->data_conclusao}}</td>
+      <td>
+      <form action = "{{route('tarefa.destroy', $tare)}}" method = "POST">
+                @csrf
+                <a class = "btn btn-success" href="{{route('tarefa.edit', $tare)}}">Editar</a>
+                @method('DELETE')
+                <button type = "submit" class = "btn btn-danger">Excluir</button>
+            </form> 
+      </td>
     </tr>
   </tbody>
   @endforeach
