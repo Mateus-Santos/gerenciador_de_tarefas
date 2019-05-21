@@ -13,9 +13,7 @@ class TarefaController extends Controller
     public function index()
     {
         $tarefa = Tarefa::all();
-        $tipo_tarefa = Tipo_tarefa::all();
-        $user = User::all();
-        return view('list-tarefas', compact('tarefa','tipo_tarefa', 'user'));
+        return view('list-tarefas', compact('tarefa'));
     }
 
     public function __construct()

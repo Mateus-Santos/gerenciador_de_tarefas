@@ -30,8 +30,8 @@
         <label class="status" for="status" >Escreva o status:</label>
         <input type="text" class="form-control" id="status" name="status" value="{{$tarefa->descricao}}">
         <br>
-        <label class="data_conclusao" for="data_conclusao">Nome da data de conclusão:</label>
-        <input type="text" class="form-control" id="data_conclusao" name="data_conclusao" value="{{$tarefa->descricao}}">
+        <label for="datepicker">Data de conclusão:</label>
+        <input type="text" id="datepicker" name="data_conclusao" value="{{$tarefa->data_conclusao}}">
         <br>
         <label for="usuario_responsavel">Escolha o responsavel:</label>
         <select class="form-control" id="usuario_responsavel" name="usuario_responsavel">

@@ -41,7 +41,7 @@
         background-color: #848484;
         font-size: 15pt;
         color: black;
-        width: 50%;
+        width: 45%;
         left: 38%;
         top: 17%;
     }
@@ -50,7 +50,26 @@
         top: 66%;
         left: 38%;
     }
+    body{
+        
+        background-image: url("https://www.auranet.com.br/fotos/admin/2018/03/usando-notebook.jpg");
+        background-repeat: no-repeat;
+    }
+    
+    body {
+    background-image: url("https://www.auranet.com.br/fotos/admin/2018/03/usando-notebook.jpg");
+    background-size: 100%;
+    }
     </style>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+        $( "#datepicker" ).datepicker();
+        } );
+  </script>
 	<!--[if lt IE 9]>
 		<script src="js/vendor/html5shiv.min.js"></script>
 		<script src="js/vendor/respond.min.js"></script>

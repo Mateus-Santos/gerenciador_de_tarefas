@@ -23,4 +23,4 @@ Route::resource('tipo_tarefa', 'tipo_tarefaController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
