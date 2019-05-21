@@ -23,7 +23,8 @@
       <td>{{$us->sexo}}</td>
       <td>{{$us->data_nascimento}}</td>
       <td>{{$us->telefone}}</td>
-      <td>{{$us->login}}</td>  
+      <td>{{$us->login}}</td>
+      <td>Em breve</td> 
     </tr>
   </tbody>
 @endforeach
