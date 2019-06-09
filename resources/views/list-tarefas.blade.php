@@ -25,7 +25,7 @@
       <td>{{$tare->usuario_responsavel}}</td>
       <td>{{$tare->privado}}</td>
       <td>{{$tare->descricao}}</td>
-      <td>{{$tare->tipo}}</td>
+      <td>{{$tare->tipo_tarefa["nome"]}}</td>
       <td>{{$tare->status}}</td>
       <td>{{$tare->data_conclusao}}</td>
       <td>

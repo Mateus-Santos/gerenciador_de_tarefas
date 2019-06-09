@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Usuario;
+use App\User;
 
 class UsuarioController extends Controller
 {
@@ -14,7 +14,7 @@ class UsuarioController extends Controller
     
     public function index()
     {
-        $usuario = Usuario::all();
+        $usuario = User::all();
         return view('list-usuario', compact('usuario'));
     }
 
@@ -36,16 +36,16 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario = new Usuario();
-        $usuario->nome = $request->input('nome');
+        $usuario = new User();
+        $usuario->name = $request->input('nome');
         $usuario->sexo = $request->input('sexo');
         $usuario->data_nascimento = $request->input('data_nascimento');
         $usuario->email = $request->input('email');
         $usuario->telefone = $request->input('telefone');
         $usuario->login = $request->input('login');
-        $usuario->password = $request->input('password');
+        $usuario->password = $request->input(bcrypt('password'));
         $usuario->save();
-        return redirect()->route('/principal');
+        return redirect()->route('home');
     }
 
     /**
@@ -65,7 +65,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit(User $usuario)
     {
         return view('edit-usuario',compact('usuario'));
     }
@@ -77,7 +77,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, User $usuario)
     {
         $usuario->nome = $request->input('nome');
         $usuario->sexo = $request->input('sexo');
@@ -96,7 +96,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuario $usuario)
+    public function destroy(User $usuario)
     {
         $usuario->delete();
         return redirect()->route('list-usuario');

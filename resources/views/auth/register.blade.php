@@ -60,6 +60,38 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                             <label class="col-md-4 col-form-label text-md-right" for="sexo">Escolha o sexo</label>
+                             <div class="col-md-6">
+                             <select class="form-control" id="sexo" name="sexo">  
+                                <option>Masculino</option>
+                                <option>Feminino</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                             <label class="col-md-4 col-form-label text-md-right" for="data_nascimento">Data de Nascimento</label>
+                             <div class="col-md-6">
+                             <input id="data_nascimento" type="date" class="form-control" name="data_nascimento">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                             <label class="col-md-4 col-form-label text-md-right" for="telefone">Telefone</label>
+                             <div class="col-md-6">
+                             <input id="telefone" type="tel" class="form-control" name="telefone">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                             <label class="col-md-4 col-form-label text-md-right" for="login">Login</label>
+                             <div class="col-md-6">
+                             <input id="login" type="tel" class="form-control" name="login">
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

@@ -11,7 +11,6 @@
 |
 */
 
-Route::view('/principal', 'principal')->name('principal');
 
 Route::get('/lista_user', 'UserController@index')->name('user.index');
 
@@ -20,6 +19,8 @@ Route::resource('usuario', 'UsuarioController');
 Route::resource('tarefa', 'TarefaController');
 
 Route::resource('tipo_tarefa', 'tipo_tarefaController');
+
+Route::view('/home', 'principal')->name('home');
 
 Auth::routes();
 
